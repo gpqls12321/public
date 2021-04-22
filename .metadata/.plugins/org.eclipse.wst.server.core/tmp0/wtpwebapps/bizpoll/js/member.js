@@ -52,3 +52,10 @@ function post_zip() {
 	var url = "find_zip_num.bizpoll"
 	window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=500, height=300, top=300, left=300");
 }
+
+function deletemem() {
+	if (document.frm.pwd.value == "") {
+		alert("아이디를 입력해 주세요");
+		return;
+	}
+}

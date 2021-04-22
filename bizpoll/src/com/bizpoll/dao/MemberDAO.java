@@ -81,5 +81,58 @@ public class MemberDAO {
 			DBManager.close(conn, pstmt, rs);
 		}
 		return result;
+	} 
+	
+	
+	public int insertMember(MemberDTO mDto) {
+		
+		int result = 0;
+		String sql = "INSERT INTO member(id, pwd, name, email, address, phone, zip_num) VALUES(?, ?, ?, ?, ?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mDto.getId());
+			pstmt.setString(2, mDto.getPwd());
+			pstmt.setString(3, mDto.getName());
+			pstmt.setString(4, mDto.getEmail());
+			pstmt.setString(5, mDto.getAddress());
+			pstmt.setString(6, mDto.getPhone());
+			pstmt.setString(7, mDto.getZipNum());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+		return result;
 	}
+
+	public int deleteMember(String userId) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		
+		String sql = "DELETE FROM member WHERE id = ?";
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, userId);
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+		return result;
+	}
+
 }

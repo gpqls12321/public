@@ -37,19 +37,21 @@
 <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="com.bizpoll.action.IndexAction"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.bizpoll.dao.ProductDAO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.bizpoll.dto.ProductDTO"/>
 <fullyQualifiedTypeName name="com.bizpoll.action.Action"/>
 <fullyQualifiedTypeName name="com.bizpoll.action.ActionFoward"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="com.bizpoll.dto.MemberDTO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="com.bizpoll.dao.AddressDAO"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.bizpoll.dto.AddressDTO"/>
+<fullyQualifiedTypeName name="com.bizpoll.dto.MemberDTO"/>
 <fullyQualifiedTypeName name="com.bizpoll.dao.MemberDAO"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="com.bizpoll.common.DBManager"/>
 </qualifiedTypeNameHistroy>

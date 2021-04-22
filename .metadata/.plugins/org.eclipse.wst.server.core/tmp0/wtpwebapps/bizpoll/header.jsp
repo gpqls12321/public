@@ -45,6 +45,14 @@
 					<li><a>APP</a></li>
 					<li>│</li>
 					<li><a href="boardList.bizpoll">BOARD</a></li>
+					<li>│</li>
+					<c:choose>
+						<c:when test="${empty sessionScope.loginUser}">
+						</c:when>
+						<c:otherwise>
+							<li><a href="delete_form.bizpoll">탈퇴</a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</nav>
 		</header>
