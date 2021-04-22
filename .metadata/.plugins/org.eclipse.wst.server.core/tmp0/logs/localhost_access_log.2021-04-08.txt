@@ -1,0 +1,15 @@
+127.0.0.1 - - [08/Apr/2021:16:19:02 +0900] "GET / HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:04 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:05 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:06 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:06 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:06 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:07 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:07 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:07 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:07 +0900] "GET /reponsive_web/index.html HTTP/1.1" 404 1100
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:19:55 +0900] "GET /responsive_web/index.html HTTP/1.1" 200 139
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:23:34 +0900] "GET /responsive_web/index.html HTTP/1.1" 200 184
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:31:26 +0900] "GET /responsive_web/index.html HTTP/1.1" 200 313
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:31:26 +0900] "GET /responsive_web/css/main.css HTTP/1.1" 200 17
+0:0:0:0:0:0:0:1 - - [08/Apr/2021:16:32:43 +0900] "GET /responsive_web/css/main.css HTTP/1.1" 304 -

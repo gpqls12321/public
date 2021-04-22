@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/myscript02.js">
+</script>
+</head>
+<body>
+	<h3>덧셈 계산기</h3>
+	<form action="#" method="post" name="frm">
+		첫번째 정수 : <input id="x" name="firstNum"><br>
+		두번째 정수 : <input id="y" name="secondNum"><br>
+		합계 : <input id="sum" name="sum" disabled="disabled"> <br>
+		<input type="button" value="계산" onclick="calc();">
+	</form>
+	
+	<h1 id="test">This is a heading</h1>
+	<script type="text/javascript">
+	function func() {
+		e = document.getElementById("test");
+		e.style.color = "red";
+	}
+	</script>
+	<button type="button" onclick="func();">글자색변경</button>
+</body>
+</html>

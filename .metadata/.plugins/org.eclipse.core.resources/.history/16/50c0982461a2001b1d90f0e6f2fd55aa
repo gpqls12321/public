@@ -1,0 +1,12 @@
+function go_next() {
+	if (document.frm.okon1[0].checked == true) {
+		document.frm.action = "join_form.bizpoll";
+		document.frm.submit();
+	} else if (document.frm.okon1[1].checked == true) {
+		alert("약관에 동의해 주세요.");
+	}
+}
+
+function go_save() {
+	alert("확인");
+}

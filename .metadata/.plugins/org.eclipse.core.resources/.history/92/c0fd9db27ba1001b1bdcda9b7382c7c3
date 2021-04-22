@@ -1,0 +1,15 @@
+package com.bizpoll.action;
+
+/*
+ * public class DetailAction implements Action{
+ * 
+ * @Override public ActionFoward excute(HttpServletRequest request,
+ * HttpServletResponse response) throws ServletException, IOException { String
+ * uri = "product_detail.jsp";
+ * 
+ * ProductDAO pDao = ProductDAO.getInstance();
+ * 
+ * return null; }
+ * 
+ * }
+ */

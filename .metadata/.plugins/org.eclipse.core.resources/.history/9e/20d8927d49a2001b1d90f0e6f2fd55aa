@@ -1,0 +1,6 @@
+function go_next() {
+	if (document.frm.okon1[0].checked == true) {
+		document.frm.action = "join_form.bizpoll";
+		document.frm.submit();
+	}
+}

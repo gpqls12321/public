@@ -1,0 +1,13 @@
+INDEX VERSION 1.131
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\115936139.index
+\html5css\src
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\205279907.index
+\html5css\src
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3679761396.index
+\bizpoll\src
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\598700681.index
+\bizpoll\src
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\699218832.index
+\bizpoll\src
+D:\servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2291544036.index
+\bizpoll\src

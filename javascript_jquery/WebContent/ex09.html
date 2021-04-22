@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jQuery3.x/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+	alert('Hello jQuery');
+	});
+	
+	function registerCheck() {
+		var frm = document.register;
+		var min = 6;
+		var max = 8;
+		
+		if (frm.irum.value.length == 0) {
+			alert("필수 입력 사항입니다.");
+			frm.irum.focus();
+			return false;
+		}
+		if (frm.userid.value.length < min || frm.userid.value.length > max) {
+			alert (min + "~" + max + " 사이로 입력해 주세요."); 
+			return false;
+		}
+		
+		var phone = frm.phone.value;
+		var exp = /^[0-9]+$/;
+		
+		if(phone.match(exp) == null) {
+			document.getElementById("msg").style.fontWeight = "bold";
+			document.getElementById("msg").style.color = "red";
+			document.getElementById("msg").textContent = "숫자만 입력하세요";
+			return false;
+		} 
+		return true;
+	}
+	
+</script>
+</head>
+<body>
+	<h3>회원가입</h3>
+	<form action="ex08.html" name="register" onsubmit="return registerCheck();">
+		이름 : <input type="text" id="irum" name="irum"><br>
+		주소 : <input type="text" id="addr" name="addr"><br>
+		생일 : <input type="date" id="birthday" name="birthday"><br>
+		아이디(6~8문자) : <input type="text" id="userid" name="userid"><br>
+		이메일 : <input type="email" id="email" name="email"><br>
+		휴대폰 : <input type="tel" id="phone" name="phone">&nbsp;<span id="msg"></span><br>
+		<input type="submit" value="확인" >
+	</form>
+</body>
+</html>

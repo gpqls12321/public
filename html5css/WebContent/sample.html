@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 앵커 url 주소에 ? 뒤에 오는 거 get방식 쿼리스트링 -->
+	재미있어요 HTML 여기는 jsp
+
+	<!-- 숫자 커질 수록 글씨 크기 작아짐 -->
+	<h1>heading 1</h1>
+	<h2>heading 2</h2>
+	<h6>heading 6</h6>
+
+	<!-- 네이버 사이트로 이동 -->
+	<a href="https://www.naver.com">Naver사이트로 이동</a>
+	<br>
+	<!-- 앵커 태그의 밑줄 없애는 거 : text-decoration : none; -->
+	<a href="https://www.w3schools.com/"> w3schools </a>
+
+	<!-- <input type="text" size="12"/> -->
+	<!-- 여기에 중요한 정보쓰면 안됨.. -->
+
+	<hr />
+	&nbsp;
+	<!-- 공백 -->
+	&lt;
+	<!-- < -->
+	&gt;
+	<!-- > -->
+	&quot;
+	<!-- " -->
+	&amp;
+	<!-- & -->
+
+	<ul>
+		<!-- 순서가 없는 리스트 -->
+		<li>에스프레소</li>
+		<li>아메리카노</li>
+		<li>카페라떼</li>
+	</ul>
+
+	<ol>
+		<!-- 순서가 있는 리스트 -->
+		<li>에스프레소</li>
+		<li>아메리카노</li>
+		<li>카페라떼</li>
+	</ol>
+
+	<!-- text 텍스트 입력할 수 있는 한줄짜리 필드 생성 -->
+	<!-- password 비밀번호 한줄짜리 필드 생성 -->
+	<!-- radio 라디오 버튼 -->
+	<!-- checkbox 체크 박스  -->
+	<!-- file 파일이름 입력하는 필드 -->
+	<!-- reset 초기화 버튼 생성 -->
+	<!-- image 이미지를 전송 버튼으로  -->
+	<!-- hidden 사용자에게는 보이지 않지만 서버로 전송 -->
+	<!-- submit 제출 버튼 생성 -->
+
+	<form action="" method="" name=""></form>
+
+	<form>
+		성별 : <input type="radio" name="gender" value="male">남성 <input
+			type="radio" name="gender" value="female">여성 <br> <input
+			type="submit" value="확인">
+	</form>
+
+	<form enctype="multipart/form-data">
+		<input type="file" accept="image/어쩌고">
+	</form>
+
+	<!-- placeholder - 입력 힌트를 희미하게 표시
+		 readonly - 읽기 전용 필드 -->
+
+	<!-- 사용자로부터 입력받는 태그들 : input textarea check radio selectbox -->
+
+	<!-- get parameter values 여러개 꺼내오기 -->
+
+	<!-- Id => #
+	 	 class => .    -->
+
+
+	<!-- CSS3 선택자(selector) => 스트립트
+		/* */ =>주석
+		끝에 반드시 ';' 작성
+		<p>(선택자) {  color(속성) : blue(값value) ;  } -->
+
+	<!-- margin : border(경계) 밖
+			padding : border(경계) 안
+
+			블럭 요소, 인라인 요소
+			시맨틱 웹 -->
+
+	<h> &lt;h&gt;&nbsp;태그 </h>
+	<xmp> <h>태그 </xmp>
+
+	<br>
+	<br>
+	<hr>
+	<!-- <h> 태그 -->
+	<h1>h1 태그입니다.</h1>
+	<h2>h2 태그입니다.</h2>
+	<h3>h3 태그입니다.</h3>
+	<h4>h4 태그입니다.</h4>
+	<h5>h5 태그입니다.</h5>
+	<h6>h6 태그입니다.</h6>
+	<hr>
+
+	<!-- <p>, <br>, <b> -->
+	<p>주로 본문에 사용되는 태그로서 단락을 구분합니다.</p>
+	<p>주로 본문에 사용되는 태그로서 단락을 구분합니다.</p>
+	<p>
+		주로 <b>본문</b>에 사용되는 태그로서 단락을 구분합니다.<br>행바꿈 태그입니다.
+	</p>
+	<hr>
+
+	<!-- <i>, <sup>, <ins>, <del> -->
+	<p>
+		<i>KOREA</i>
+	</p>
+	<p>
+		KOREA<sup>SEOUL</sup>
+	</p>
+	<p>
+		<ins>KOREA</ins>
+	</p>
+	<p>
+		<del>KOREA</del>
+	</p>
+	<hr>
+
+	<p>메뉴리스트</p>
+	<ul>
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+	</ul>
+	<p>지역 리스트</p>
+	<ol>
+		<li>서울</li>
+		<li>경기</li>
+		<li>인천</li>
+		<li>강원</li>
+	</ol>
+	
+	<d1>
+		<dt>메뉴 리스트</dt> 
+			<dd>menu1</dd>
+			<dd>menu2</dd>
+			<dd>menu3</dd>
+			<dd>menu4</dd>
+			<dd>menu5</dd>
+		<dt>지역 리스트</dt>
+		 	<dd>서울</dd>
+			<dd>경기</dd>
+			<dd>인천</dd>
+			<dd>강원</dd>
+	</d1>
+	<hr>
+	
+	<table border="1">
+		<tr>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+		</tr>
+		<tr>
+			<td>95</td>
+			<td>53</td>
+			<td>59</td>
+		</tr>
+		<tr>
+				<!-- 열 병합 -->
+			<td colspan="2">평균</td>
+			<td>60</td>
+		</tr>
+	</table>
+	<table border="1">
+		<tr> 
+			<td rowspan = '4'> 중간고사 성적 </td> 
+		</tr>
+		<tr>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+		</tr>
+		<tr>
+			<td>95</td>
+			<td>53</td>
+			<td>59</td>
+		</tr>
+		<tr>
+				<!-- 열 병합 -->
+			<td colspan="2">평균</td>
+			<td>60</td>
+		</tr>
+	</table>
+	
+	<hr>
+	<p> <img alt="html5_logo" src="images/HTML5_logo.png" width="100" height="100"></p>
+	<p>	<img alt="html5_logo" src="https://media.vlpt.us/images/jacoblee19/post/37558a06-0678-4657-adb2-e1e957e6d8f0/html.webp" width="150" height="100"></p>
+	<hr>
+	
+	<audio src="media/라일락.mp3" controls="controls" autoplay="autoplay"></audio>
+	<hr>
+	<table border="1" style="width: 300px">
+		<tr>
+			<td>
+				<h1>주간 히트 노래</h1>
+				<hr>
+				<ol>
+					<li><img alt="1" src="images/1234.jpg" width="50" height="50"><a href="#aaa">어머 누구니</a></li>
+					<li><img alt="2" src="images/5678.jpg" width="50" height="50"><a href="#aaa">한번 더 말해줘</a></li>
+					<li><img alt="3" src="images/ABC.jpg" width="50" height="50"><a href="#aaa">다른 남자 말고 너</a></li>
+					<li><img alt="4" src="images/DEF.jpg" width="50" height="50"><a href="#aaa">모두가 내 발아래</a></li>
+					<li><img alt="5" src="images/GHI.jpg" width="50" height="50"><a href="#aaa">조만간 봐요</a></li>
+				</ol>
+				<p><audio src="media/라일락.mp3" controls="controls" autoplay="autoplay"></audio></p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<video src="media/롤린.mp4" controls="controls" width="300" height="300"></video>
+	<hr>
+	
+
+</body>
+</html>

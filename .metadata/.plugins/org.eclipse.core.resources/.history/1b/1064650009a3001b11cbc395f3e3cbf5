@@ -1,0 +1,15 @@
+package com.bizpoll.dto;
+
+import java.io.Serializable;
+
+public class AddressDTO implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	private String zipNum;
+	private String sido;
+	private String gugun;
+	private String dong;
+	private String zipCode;
+	private String bunji;
+}

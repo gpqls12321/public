@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body {
+		background-color: #eef;
+	}
+</style>
+<script type="text/javascript" src="js/jQuery3.x/jquery-3.6.0.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		var i = 0; 
+
+		$("div.out").mouseover(function() {
+			$("p:first", this).text("mouse over");
+			$("p:last", this).text(++i); // text()안에 메서드, 문자열, 산수 가능
+		});
+		
+		$("input").focus(function() {
+			$(this).css("background-color", "yellow");
+		});
+		
+		$("input").blur(function() {
+			$(this).css("background-color", "#fff"); //아이디 중복체크할 때 사용. 다른 곳으로 이동하면 "사용가능한 아이디입니다." 이런식으로 뜨게
+		});
+		
+		$(document).mouseover(function(e) { // function(e) : 콜백함수
+			$("#log").text("e.pageX: " + e.pageX + ", e.pageY : " + e.pageY);
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="out">
+		<p>마우스를 여기로 움직이세요.</p>
+		<p>0</p>
+	</div>
+	
+	<hr>
+	아이디 : <input type="text" name="userid">
+	<hr>
+	<div id="log"></div>
+	
+</body>
+</html>

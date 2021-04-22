@@ -1,0 +1,21 @@
+package com.bizpoll.dao;
+
+import java.util.ArrayList;
+
+import com.bizpoll.dto.AddressDTO;
+
+public class AddressDAO {
+
+	private AddressDAO() {
+	}
+	
+	private static AddressDAO instance = new AddressDAO();
+	
+	public static AddressDAO getInstance() {
+		return instance;
+	}
+	
+	public ArrayList<AddressDTO> selectAddressByDong() {
+		
+	}
+}
