@@ -422,3 +422,14 @@
 0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:28:21 +0900] "GET /bizpoll/images/under_logo.gif HTTP/1.1" 404 1105
 0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:28:23 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 1184
 0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:28:27 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 1196
+127.0.0.1 - - [22/Apr/2021:16:39:25 +0900] "GET / HTTP/1.1" 404 1076
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:30 +0900] "POST /bizpoll/join_form.bizpoll HTTP/1.1" 200 3856
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:30 +0900] "GET /bizpoll/js/member.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:31 +0900] "GET /bizpoll/images/submit_back.jpg HTTP/1.1" 404 1106
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:31 +0900] "GET /bizpoll/images/dup.jpg HTTP/1.1" 404 1098
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:31 +0900] "GET /bizpoll/images/cancel_back.jpg HTTP/1.1" 404 1106
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:31 +0900] "GET /bizpoll/images/under_logo.gif HTTP/1.1" 404 1105
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:34 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 25
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:36 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 29
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:39:37 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 29
+0:0:0:0:0:0:0:1 - - [22/Apr/2021:16:40:18 +0900] "POST /bizpoll/id_check_form.bizpoll HTTP/1.1" 200 25

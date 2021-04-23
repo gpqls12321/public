@@ -54,4 +54,5 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.bizpoll.common.DBManager"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
 </qualifiedTypeNameHistroy>
