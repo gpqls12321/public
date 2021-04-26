@@ -1,8 +1,0 @@
-package com.bizpoll.action;
-
-public class ActionFoward {
-	private String path;
-	
-	// true → sendRedirect, false → forward
-	private boolean isRedirect;
-}

@@ -14,14 +14,14 @@ public class BoardDTO {
 	private int ref;
 	private int re_step;
 	private int re_level;
-	private String feilName;
+	private String fileName;
 	
 	public BoardDTO() {
 	}
 	
 
 	public BoardDTO(int articleNo, String subject, String content, String passwd, Timestamp reg_date, int readcount,
-			String id, int ref, int re_step, int re_level, String feilName) {
+			String id, int ref, int re_step, int re_level, String fileName) {
 		super();
 		this.articleNo = articleNo;
 		this.subject = subject;
@@ -33,7 +33,7 @@ public class BoardDTO {
 		this.ref = ref;
 		this.re_step = re_step;
 		this.re_level = re_level;
-		this.feilName = feilName;
+		this.fileName = fileName;
 	}
 
 
@@ -117,19 +117,19 @@ public class BoardDTO {
 		this.re_level = re_level;
 	}
 
-	public String getFeilName() {
-		return feilName;
+	public String getFileName() {
+		return fileName;
 	}
 
 	public void setFeilName(String feilName) {
-		this.feilName = feilName;
+		this.fileName = feilName;
 	}
 
 	@Override
 	public String toString() {
 		return "BoardDTO [articleNo=" + articleNo + ", subject=" + subject + ", content=" + content + ", passwd="
 				+ passwd + ", reg_date=" + reg_date + ", readcount=" + readcount + ", id=" + id + ", ref=" + ref
-				+ ", re_step=" + re_step + ", re_level=" + re_level + ", feilName=" + feilName + "]";
+				+ ", re_step=" + re_step + ", re_level=" + re_level + ", fileName=" + fileName + "]";
 	}
 	
 }
