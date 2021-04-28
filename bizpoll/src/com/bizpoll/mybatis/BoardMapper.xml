@@ -27,4 +27,13 @@
 			INSERT INTO board(articleno, subject, content, reg_date, ref, re_step, re_level, fileName, id)
 			VALUES(board_seq.nextval, #{subject}, #{content}, sysdate, #{ref}, #{re_step}, #{re_level}, #{fileName}, #{id})
 	</insert> 
+	
+	<select id="boardDetail" parameterType="Integer" resultType="com.bizpoll.dto.BoardDTO">
+			SELECT * FROM board WHERE articleno = #{articleno}
+	</select>
+	<!-- 매개변수에서 파라미터로 넘어온.. 타입, 리턴해줄 때 타입 -->
+	<delete id="boardDelete" parameterType="int"> <!-- 넘겨받을 때 parameterType ///// 반환해 줄 때 resultType-->
+		DELETE FROM board WHERE articleno = #{articleno}
+	</delete>
+	
 </mapper>

@@ -60,7 +60,7 @@ public class BoardAddAction implements Action {
 			pw.print("<script>" + " alert('글이 등록되었습니다.');" + " location.href='" + "boardList.bizpoll';" + "</script>");
 		} else {
 			pw.print("<script>" + " alert('다시 시도해 주세요.');" + " history.go(-1);" + "</script>");
-		}
+		}  
 		
 		return null;
 	}

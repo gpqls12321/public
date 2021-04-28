@@ -45,7 +45,7 @@
 				<input type="file" name="fileName" onchange="readURL(this);">
 			</td>
 			<td>
-				<img id="preview" alt="preview" src="#" width="200" height="200">
+				<img id="preview" alt="preview" src=" " width="200" height="200">
 			</td>
 		</tr>
 		<tr>
@@ -57,5 +57,6 @@
 		</tr>
 	</table>
 </form>
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

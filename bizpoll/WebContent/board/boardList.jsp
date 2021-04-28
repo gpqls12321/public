@@ -19,6 +19,11 @@
 		font-size: 30px;
 	}
 </style>
+<script type="text/javascript">
+	function boardWrite() {
+		alert("글 쓰기 함수");
+	}
+</script>
 </head>
 <body>
 	<h1 class="cls2">게시판</h1>
@@ -56,10 +61,10 @@
 											<span style="padding-left: 20px;"></span>
 										</c:forEach>
 										<span style="font-size: 12px;">[답변]</span>
-										<a class="cls1" href="boardView.bizpoll?articleNo=${boardListDTO.articleNo}">${boardListDTO.subject}</a>
+										<a class="cls1" href="boardDetail.bizpoll?articleNo=${boardListDTO.articleNo}">${boardListDTO.subject}</a>
 									</c:when>
 									<c:otherwise>
-										<a class="cls1" href="boardView.bizpoll?articleNo=${boardListDTO.articleNo}">${boardListDTO.subject}</a>
+										<a class="cls1" href="boardDetail.bizpoll?articleNo=${boardListDTO.articleNo}">${boardListDTO.subject}</a>
 									</c:otherwise>
 								</c:choose>
 							</td>
@@ -71,9 +76,18 @@
 			</c:choose>
 		</tbody>
 	</table>
-	<a class="cls1" href="boardForm.bizpoll">
-		<p class="cls2">글쓰기</p>
-	</a>
+	<c:choose>
+		<c:when test="${!empty sessionScope.loginUser}">
+			<div align="center">
+				<input type="button" value="글쓰기" onclick="location='boardForm.bizpoll'">
+			</div>
+		</c:when>
+		<c:otherwise>
+			<div align="center">
+				<input type="button" value="로그인 후 글쓰기" onclick="location='login_form.bizpoll'">
+			</div>
+		</c:otherwise>
+	</c:choose>
 <%@ include file="../footer.jsp" %>
 </body>
 </html>
