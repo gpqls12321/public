@@ -88,11 +88,27 @@ public class BoardDAO {
 		
 		try {
 			sqlSession.delete("boardDelete", articleNo);
+			sqlSession.commit();
 			System.out.println();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			sqlSession.close();
 		}
+	}
+
+	public int modify(BoardDTO bDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		
+		int result = 0;
+		try {
+			result = sqlSession.update("modifyBoard", bDto);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return result;
 	}
 }

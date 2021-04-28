@@ -36,4 +36,13 @@
 		DELETE FROM board WHERE articleno = #{articleno}
 	</delete>
 	
+	<update id="modifyBoard" parameterType="com.bizpoll.dto.BoardDTO">
+		UPDATE board
+		SET subject = #{subject}, content = #{content}
+		<if test="fileName != null">
+		, fileName = #{fileName}
+		</if>
+		WHERE articleNo = #{articleNo}
+	</update>
+	
 </mapper>
