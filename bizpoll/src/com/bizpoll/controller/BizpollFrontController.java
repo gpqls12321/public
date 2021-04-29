@@ -17,6 +17,7 @@ import com.bizpoll.action.BoardDetailAction;
 import com.bizpoll.action.BoardFormAction;
 import com.bizpoll.action.BoardListAction;
 import com.bizpoll.action.BoardModifyAction;
+import com.bizpoll.action.BoardReplyAction;
 import com.bizpoll.action.BoardReplyFormAction;
 import com.bizpoll.action.ContractAction;
 import com.bizpoll.action.DeleteFormAction;
@@ -123,6 +124,9 @@ public class BizpollFrontController extends HttpServlet {
 			forward = action.excute(request, response);
 		} else if (command.equals("/boardReplyForm.bizpoll")) {
 			action = new BoardReplyFormAction();
+			forward = action.excute(request, response);
+		} else if (command.equals("/boardReply.bizpoll")) {
+			action = new BoardReplyAction();
 			forward = action.excute(request, response);
 		}
 		

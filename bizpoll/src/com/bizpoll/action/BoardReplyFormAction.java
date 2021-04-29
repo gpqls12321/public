@@ -17,16 +17,21 @@ public class BoardReplyFormAction implements Action {
 		String url = "board/boardReplyForm.jsp";
 		
 		try {
-			System.out.println("action ref ===> " + request.getParameter("ref"));
-			System.out.println("action re_step ===> " + request.getParameter("re_step"));
-			System.out.println("action re_level ===> " + request.getParameter("re_level"));
-			System.out.println("action articleNo ===> " + request.getParameter("articleNo"));
+//			System.out.println("action ref ===> " + request.getParameter("ref"));
+//			System.out.println("action re_step ===> " + request.getParameter("re_step"));
+//			System.out.println("action re_level ===> " + request.getParameter("re_level"));
+//			System.out.println("action articleNo ===> " + request.getParameter("articleNo"));
 			
 			int articleNo = Integer.parseInt(request.getParameter("articleNo"));
 			int ref = Integer.parseInt(request.getParameter("ref"));
 			int re_step = Integer.parseInt(request.getParameter("re_step"));
 			int re_level = Integer.parseInt(request.getParameter("re_level"));
 			
+			System.out.println("articleNo ===> " + articleNo);
+			System.out.println("ref ===> " + ref);
+			System.out.println("re_step ===> " + re_step);
+			System.out.println("re_level ===> " + re_level);
+
 			Map<String, Integer> replyInfo = new HashMap<>();
 			replyInfo.put("articleNo", articleNo);
 			replyInfo.put("ref", ref);

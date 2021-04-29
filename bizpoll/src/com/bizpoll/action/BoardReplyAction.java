@@ -15,40 +15,47 @@ import com.bizpoll.common.FileUpLoad;
 import com.bizpoll.dao.BoardDAO;
 import com.bizpoll.dto.BoardDTO;
 
-public class BoardAddAction implements Action {
+public class BoardReplyAction implements Action {
 
 	@Override
 	public ActionFoward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		String url = "board/boardList.jsp";
 		
 		BoardDTO bDto = new BoardDTO();
 		BoardDAO bDao = new BoardDAO();
 		
 		Map<String, String> boardMap = FileUpLoad.upload(request, response);
 		
-		int articleNo = bDao.getNewArticleNo();
-		
-		String title = boardMap.get("subject");
+		int parentNo = Integer.parseInt(boardMap.get("ref"));
+		int articleNo = bDao.getNewArticleNo(); //댓글은 (수정과 다르게) 등록된 첨부파일 없어서 getNewArticleNo 다시 발급 받음
+		String subject = boardMap.get("subject");
 		String content = boardMap.get("content");
-		String fileName = boardMap.get("fileName");
+		String fileName  = boardMap.get("fileName");
 		String savePath = boardMap.get("savePath");
 		String id = boardMap.get("id");
-
-		bDto.setId(id);
-		bDto.setSubject(title);
+		
+		int ref = parentNo;
+		int re_step = Integer.parseInt(boardMap.get("re_step"));
+		int re_level = Integer.parseInt(boardMap.get("re_level"));
+		
+		bDto.setSubject(subject);
 		bDto.setContent(content);
 		bDto.setFileName(fileName);
-		bDto.setRef(articleNo + 1);
-		bDto.setRe_step(0);
-		bDto.setRe_level(1);
+		bDto.setRef(ref);
+		bDto.setRe_step(re_step);
+		bDto.setRe_level(re_level);
+		bDto.setId(id);
 		
-		System.out.println("BoardAddAction bDTO ==> " + bDto.getFileName());
+		int result = 0;
 		
-		int result = bDao.create(bDto);
+		result = bDao.replyReStepUpdate(bDto);
+		result = bDao.create(bDto);
 		
 		if (fileName != null && fileName.length() != 0) {
 			File srcFile = new File(savePath + "\\" + "temp" + "\\" + fileName); 
-			File destDir = new File(savePath + "\\" + (articleNo + 1));
+			File destDir = new File(savePath + "\\" + articleNo);
 			destDir.mkdirs(); 
 			FileUtils.moveFileToDirectory(srcFile, destDir, true);
 		}
@@ -57,7 +64,7 @@ public class BoardAddAction implements Action {
 		PrintWriter pw = response.getWriter();
 		
 		if (result > 0) {
-			pw.print("<script>" + " alert('글이 등록되었습니다.');" + " location.href='" + "boardList.bizpoll';" + "</script>");
+			pw.print("<script>" + " alert('댓글이 등록되었습니다.');" + " location.href='" + "boardList.bizpoll';" + "</script>");
 		} else {
 			pw.print("<script>" + " alert('다시 시도해 주세요.');" + " history.go(-1);" + "</script>");
 		}  

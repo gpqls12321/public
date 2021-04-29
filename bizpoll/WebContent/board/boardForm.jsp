@@ -27,36 +27,39 @@
 </script>
 </head>
 <body>
+<div align="center">
+<br><br><br><br><br><br><br><br>
 <h1 style="text-align: center;">새글쓰기</h1>
-<form action="boardAdd.bizpoll" name="articleForm" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="id" value="${sessionScope.loginUser.id}">
-	<table border="0" align="center">
-		<tr>
-			<td align="right">글제목</td>
-			<td colspan="2"><input type="text" size="67" maxlength="500" name="subject"></td>
-		</tr>
-		<tr>
-			<td align="right">글내용</td>
-			<td colspan="2"><textarea name="content" rows="10" cols="65" maxlength="4000"></textarea></td>
-		</tr>
-		<tr>
-			<td align="right">이미지 파일 첨부</td>
-			<td>
-				<input type="file" name="fileName" onchange="readURL(this);">
-			</td>
-			<td>
-				<img id="preview" alt="preview" src=" " width="200" height="200">
-			</td>
-		</tr>
-		<tr>
-			<td align="right"></td>
-			<td colspan="2">
-				<input type="submit" value="글쓰기">
-				<input type="button" value="목록보기" onclick="backToList(this.form);">
-			</td>
-		</tr>
-	</table>
-</form>
+	<form action="boardAdd.bizpoll" name="articleForm" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="${sessionScope.loginUser.id}">
+		<table border="0" align="center">
+			<tr>
+				<td align="right">글제목</td>
+				<td colspan="2"><input type="text" size="67" maxlength="500" name="subject"></td>
+			</tr>
+			<tr>
+				<td align="right">글내용</td>
+				<td colspan="2"><textarea name="content" rows="10" cols="65" maxlength="4000"></textarea></td>
+			</tr>
+			<tr>
+				<td align="right">이미지 파일 첨부</td>
+				<td>
+					<input type="file" name="fileName" onchange="readURL(this);">
+				</td>
+				<td>
+					<img id="preview" alt="preview" src=" " width="200" height="200">
+				</td>
+			</tr>
+			<tr>
+				<td align="right"></td>
+				<td colspan="2">
+					<input type="submit" value="글쓰기">
+					<input type="button" value="목록보기" onclick="backToList(this.form);">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
 <%@ include file="../footer.jsp" %>
 </body>
 </html>

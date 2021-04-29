@@ -111,4 +111,43 @@ public class BoardDAO {
 		}
 		return result;
 	}
+
+	public int replyReStepUpdate(BoardDTO bDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		
+		int result = 0;
+		
+		try {
+			int maxsOrder = sqlSession.selectOne("selectBoardReplyMaxOrder", bDto);
+			System.out.println("maxsOrder ===> " + maxsOrder);
+			
+			if (maxsOrder == 0) { //맨마지막에 오는 댓글
+				int selectReStep = sqlSession.selectOne("selectReStep", bDto);
+				int re_level = bDto.getRe_level() + 1;
+				
+				bDto.setRe_step(selectReStep);
+				bDto.setRe_level(re_level);
+				
+				result = sqlSession.insert("createBoard", bDto);
+			} else {
+				maxsOrder = sqlSession.selectOne("selectBoardReplyMaxOrder", bDto);
+				bDto.setRe_step(maxsOrder);
+				
+				sqlSession.update("replyReStepUpdate", bDto);
+				bDto.setRe_step(bDto.getRe_step() + 1);
+				
+				int re_level = bDto.getRe_level() + 1;
+				bDto.setRe_level(re_level);
+				
+				result = sqlSession.insert("createBoard", bDto);
+				sqlSession.commit();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		
+		return result;
+	}
 }

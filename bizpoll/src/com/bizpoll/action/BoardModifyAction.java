@@ -39,7 +39,7 @@ public class BoardModifyAction implements Action {
 		bDto.setArticleNo(articleNo);
 		bDto.setSubject(title);
 		bDto.setContent(content);
-		bDto.setFeilName(fileName);
+		bDto.setFileName(fileName);
 		
 		int result = bDao.modify(bDto);
 		

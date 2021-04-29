@@ -52,25 +52,25 @@
 		parentNoInput = document.createElement("input");
 		parentNoInput.setAttribute("type", "hidden");
 		parentNoInput.setAttribute("name", "articleNo");
-		parentNoInput.setAttribute("value", "articleNo");
+		parentNoInput.setAttribute("value", articleNo);
 		form.appendChild(parentNoInput);		
 		
 		parentNoInput = document.createElement("input");
 		parentNoInput.setAttribute("type", "hidden");
 		parentNoInput.setAttribute("name", "ref");
-		parentNoInput.setAttribute("value", "ref");
+		parentNoInput.setAttribute("value", ref);
 		form.appendChild(parentNoInput);		
 		
 		parentNoInput = document.createElement("input");
 		parentNoInput.setAttribute("type", "hidden");
 		parentNoInput.setAttribute("name", "re_step");
-		parentNoInput.setAttribute("value", "re_step");
+		parentNoInput.setAttribute("value", re_step);
 		form.appendChild(parentNoInput);		
 		
 		parentNoInput = document.createElement("input");
 		parentNoInput.setAttribute("type", "hidden");
 		parentNoInput.setAttribute("name", "re_level");
-		parentNoInput.setAttribute("value", "re_level");
+		parentNoInput.setAttribute("value", re_level);
 		form.appendChild(parentNoInput);
 		
 		document.body.appendChild(form);

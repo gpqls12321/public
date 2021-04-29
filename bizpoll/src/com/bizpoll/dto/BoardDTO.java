@@ -121,8 +121,8 @@ public class BoardDTO {
 		return fileName;
 	}
 
-	public void setFeilName(String feilName) {
-		this.fileName = feilName;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	@Override
