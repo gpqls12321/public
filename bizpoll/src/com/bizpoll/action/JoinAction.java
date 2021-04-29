@@ -11,6 +11,7 @@ import com.bizpoll.dto.MemberDTO;
 
 public class JoinAction implements Action {
 
+	//주소 오픈API 사용 어쩌구 
 	@Override
 	public ActionFoward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
