@@ -128,7 +128,7 @@ public class BizpollFrontController extends HttpServlet {
 		} else if (command.equals("/boardReply.bizpoll")) {
 			action = new BoardReplyAction();
 			forward = action.excute(request, response);
-		}
+		} 
 		
 		// ------ 공통 분기 작업 ------
 		if (forward !=null) {

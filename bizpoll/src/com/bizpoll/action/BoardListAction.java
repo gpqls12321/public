@@ -1,7 +1,9 @@
 package com.bizpoll.action;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,13 +19,39 @@ public class BoardListAction implements Action {
 			throws ServletException, IOException {
 		
 		String url = "board/boardList.jsp";
-		
 		BoardDAO bDao = BoardDAO.getInstance();
 		
-		List<BoardDTO> boardList = bDao.boardList();
+		String _section = request.getParameter("section");
+		String _pageNum = request.getParameter("pageNum");
 		
-		request.setAttribute("boardList", boardList);
+		String searchType = request.getParameter("searchType");
+		String searchKeyword = request.getParameter("searchKeyword");
 		
+	    int section = Integer.parseInt(((_section == null) ? "1" : _section));
+	    int pageNum = Integer.parseInt(((_pageNum == null) ? "1" : _pageNum));
+
+	    Map<String, Object> pagingMap = new HashMap<>();
+	    pagingMap.put("section", section);
+	    pagingMap.put("pageNum", pageNum);
+	    pagingMap.put("searchType", searchType);
+	    pagingMap.put("searchKeyword", searchKeyword);
+
+		List<BoardDTO> boardList = bDao.boardList(pagingMap);
+		
+		int boardListAllCnt = bDao.boardListAllCnt(pagingMap);
+		
+		Map<String, Object> boardInfo = new HashMap<>();
+	      
+		boardInfo.put("selAllBoardList", boardList);
+	      // 건수
+		boardInfo.put("boardListAllCnt", boardListAllCnt);
+		boardInfo.put("section", section);
+		boardInfo.put("pageNum", pageNum);
+		boardInfo.put("searchType", searchType);
+		boardInfo.put("searchKeyword", searchKeyword);
+		
+		request.setAttribute("boardInfo", boardInfo);
+
 		ActionFoward forward = new ActionFoward();
 		forward.setPath(url);
 		forward.setRedirect(false);

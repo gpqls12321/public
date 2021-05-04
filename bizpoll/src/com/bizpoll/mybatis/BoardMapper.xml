@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
+
 <mapper namespace="com.bizpoll.mybatis.BoardMapper.xml">
-	
+
 	<select id="selBoardList" resultType="com.bizpoll.dto.BoardDTO">
 		<![CDATA[
 			SELECT *
@@ -13,39 +13,59 @@
       			  FROM (SELECT *
             			FROM board
             			WHERE articleno > 0
+        ]]>
+		<include refid="search"></include>
+        <![CDATA[
             			ORDER BY ref DESC, re_step ASC) a)
-			WHERE RNUM BETWEEN 1 AND 10
+			WHERE RNUM BETWEEN (#{section}-1)*100 + (#{pageNum}-1)*10+1 AND (#{section}-1)*100 + #{pageNum}*10
 		]]>
 	</select>
-	
-	<select id="getNewArticleNo" resultType="Integer">
-			SELECT max(articleno)
-			FROM board
+
+	<select id="boardListAllCnt" resultType="Integer">
+		<![CDATA[
+		SELECT COUNT(articleNo)
+		FROM board
+		WHERE articleNo > 0
+		]]>
+		<include refid="search"></include>
 	</select>
-	
-	<insert id="createBoard" parameterType="com.bizpoll.dto.BoardDTO">
-			INSERT INTO board(articleno, subject, content, reg_date, ref, re_step, re_level, fileName, id)
-			VALUES(board_seq.nextval, #{subject}, #{content}, sysdate, #{ref}, #{re_step}, #{re_level}, #{fileName}, #{id})
-	</insert> 
-	
-	<select id="boardDetail" parameterType="Integer" resultType="com.bizpoll.dto.BoardDTO">
-			SELECT * FROM board WHERE articleno = #{articleno}
+
+	<select id="getNewArticleNo" resultType="Integer">
+		SELECT max(articleno)
+		FROM board
+	</select>
+
+	<insert id="createBoard"
+		parameterType="com.bizpoll.dto.BoardDTO">
+		INSERT INTO board(articleno, subject, content, reg_date,
+		ref, re_step,
+		re_level, fileName, id)
+		VALUES(board_seq.nextval,
+		#{subject}, #{content}, sysdate, #{ref}, #{re_step}, #{re_level},
+		#{fileName}, #{id})
+	</insert>
+
+	<select id="boardDetail" parameterType="Integer"
+		resultType="com.bizpoll.dto.BoardDTO">
+		SELECT * FROM board WHERE articleno = #{articleno}
 	</select>
 	<!-- 매개변수에서 파라미터로 넘어온.. 타입, 리턴해줄 때 타입 -->
-	<delete id="boardDelete" parameterType="int"> <!-- 넘겨받을 때 parameterType ///// 반환해 줄 때 resultType-->
+	<delete id="boardDelete" parameterType="int"> <!-- 넘겨받을 때 parameterType ///// 반환해 줄 때 resultType -->
 		DELETE FROM board WHERE articleno = #{articleno}
 	</delete>
-	
-	<update id="modifyBoard" parameterType="com.bizpoll.dto.BoardDTO">
+
+	<update id="modifyBoard"
+		parameterType="com.bizpoll.dto.BoardDTO">
 		UPDATE board
 		SET subject = #{subject}, content = #{content}
 		<if test="fileName != null">
-		, fileName = #{fileName}
+			, fileName = #{fileName}
 		</if>
 		WHERE articleNo = #{articleNo}
 	</update>
-	
-	<select id="selectBoardReplyMaxOrder" resultType="int" parameterType="com.bizpoll.dto.BoardDTO">
+
+	<select id="selectBoardReplyMaxOrder" resultType="int"
+		parameterType="com.bizpoll.dto.BoardDTO">
 		<![CDATA[
 			SELECT NVL(MAX(re_step), 0)
 			FROM board
@@ -54,13 +74,15 @@
 			AND re_level <= #{re_level}
 		]]>
 	</select>
-	
-	<select id="selectReStep" resultType="int" parameterType="com.bizpoll.dto.BoardDTO">
+
+	<select id="selectReStep" resultType="int"
+		parameterType="com.bizpoll.dto.BoardDTO">
 		SELECT NVL(MAX(re_step), 0) +1
 		FROM board
-		WHERE ref = #{ref}
+		WHERE ref =
+		#{ref}
 	</select>
-	
+
 	<update id="replyReStepUpdate" parameterType="Integer">
 		<![CDATA[
 			UPDATE board
@@ -69,4 +91,31 @@
 			AND re_step > #{re_step}
 		]]>
 	</update>
+
+	<sql id="search">
+		<if test="searchType != null">
+			<if test="searchType == 't'.toString()">
+				AND subject LIKE '%'||#{searchKeyword}||'%'
+			</if>
+			<if test="searchType == 'c'.toString()">
+				AND content LIKE '%'||#{searchKeyword}||'%'
+			</if>
+			<if test="searchType == 'w'.toString()"> <!-- w : 작성자 검색 -->
+				AND id LIKE '%'||#{searchKeyword}||'%'
+			</if>
+			<if test="searchType == 'tc'.toString()"> <!-- tc : 제목, 내용 -->
+				AND (subject LIKE '%'||#{searchKeyword}||'%' OR content LIKE
+				'%'||#{searchKeyword}||'%')
+			</if>
+			<if test="searchType == 'cw'.toString()">
+				AND (content LIKE '%'||#{searchKeyword}||'%' OR id LIKE
+				'%'||#{searchKeyword}||'%')
+			</if>
+			<if test="searchType == 'tcw'.toString()">
+				AND (subject LIKE '%'||#{searchKeyword}||'%'
+				OR content LIKE '%'||#{searchKeyword}||'%'
+				OR id LIKE '%'||#{searchKeyword}||'%')
+			</if>
+		</if>
+	</sql>
 </mapper>
